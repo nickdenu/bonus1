@@ -13,5 +13,18 @@
 
 (function() {
 	// Magic!
-	console.log('Keepin\'n it clean with an external script!');
+	var x;
+	document.getElementById("searchText").onkeyup=function(){x = myFunction();};
+	var data_array;
+	$.getJSON( "http://www.mattbowytz.com/simple_api.json", function( data_array ) {
+		console.log(stringify(data_array.toString()));
+});
+	
 })();
+
+function myFunction()
+{
+	var x = document.getElementById("searchText");
+	console.log(x.value);
+	return x;
+}
